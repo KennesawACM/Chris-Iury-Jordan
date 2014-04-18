@@ -9,7 +9,7 @@
 #import "Connect4Module.h"
 #define Red 1
 #define Blue 2
-#define None 3
+#define None 0
 
 
 @implementation Connect4Module
@@ -42,14 +42,18 @@
     return 0;
 }
 
--(BOOL) isWinner{
+-(BOOL) isWinner:(int) column{
     return true;
 }
 
 -(int)checkColumn:(int) row{
+    int num;
     for (int i = 0; i < 7; i++)
     {
-        if(grid[row][i]);
+        if(grid[row][i] == None)
+        {
+            
+        }
     }
     return 0;
 }
