@@ -456,6 +456,7 @@
 				D15C57491901BEB600899741 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D15C574A1901BEB600899741 /* Build configuration list for PBXNativeTarget "Connect-4Tests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +465,7 @@
 				D15C574C1901BEB600899741 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
