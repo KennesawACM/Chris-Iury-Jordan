@@ -38,8 +38,10 @@
     return test;
 }
 
--(int) dropCoin:(int) column:(int) coin{
-    return 0;
+-(int) dropCoin:(int) row:(int) coin{
+    int column = checkColumn(row);
+    grid[row][column]= &coin;
+    return column;
 }
 
 -(BOOL) isWinner:(int) column{
@@ -47,14 +49,14 @@
 }
 
 -(int)checkColumn:(int) row{
-    int num;
-    for (int i = 0; i < 7; i++)
+    int num=0;
+    for (int i = 0; i <= 5; i++)
     {
-        if(grid[row][i] == None)
+        if(grid[row][i] != None)
         {
-            
+            num += 1;
         }
     }
-    return 0;
+    return num;
 }
 @end
