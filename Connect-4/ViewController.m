@@ -31,13 +31,13 @@
 
 - (IBAction)changeTurns:(id)sender {
     if (self.RedPlayerIndicator.alpha < 1) {
-        self.RedPlayerIndicator.alpha = 1;
-        self.BluePlayerIndicator.alpha = 0.3;
+        [self.RedPlayerIndicator setHighlighted:true];
+        [self.BluePlayerIndicator setHighlighted:true];
     }
     else
     {
-        self.RedPlayerIndicator.alpha = 0.3;
-        self.BluePlayerIndicator.alpha = 1;
+        [self.RedPlayerIndicator setHighlighted:false];
+        [self.BluePlayerIndicator setHighlighted:false];
     }
 }
 
