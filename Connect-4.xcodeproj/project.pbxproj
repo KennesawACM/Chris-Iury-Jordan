@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5AA0BFC21901C0F1005CF2A3 /* Connect4Module.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0BFC11901C0F1005CF2A3 /* Connect4Module.m */; };
 		D15C57191901BEB600899741 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15C57181901BEB600899741 /* Foundation.framework */; };
 		D15C571B1901BEB600899741 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15C571A1901BEB600899741 /* CoreGraphics.framework */; };
 		D15C571D1901BEB600899741 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15C571C1901BEB600899741 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5AA0BFC01901C0F1005CF2A3 /* Connect4Module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connect4Module.h; sourceTree = "<group>"; };
+		5AA0BFC11901C0F1005CF2A3 /* Connect4Module.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connect4Module.m; sourceTree = "<group>"; };
 		D15C57151901BEB600899741 /* Connect-4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Connect-4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D15C57181901BEB600899741 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D15C571A1901BEB600899741 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +122,8 @@
 				D15C572E1901BEB600899741 /* ViewController.m */,
 				D15C57301901BEB600899741 /* Images.xcassets */,
 				D15C571F1901BEB600899741 /* Supporting Files */,
+				5AA0BFC01901C0F1005CF2A3 /* Connect4Module.h */,
+				5AA0BFC11901C0F1005CF2A3 /* Connect4Module.m */,
 			);
 			path = "Connect-4";
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				D15C572F1901BEB600899741 /* ViewController.m in Sources */,
 				D15C57291901BEB600899741 /* AppDelegate.m in Sources */,
 				D15C57251901BEB600899741 /* main.m in Sources */,
+				5AA0BFC21901C0F1005CF2A3 /* Connect4Module.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
