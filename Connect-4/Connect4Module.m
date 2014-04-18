@@ -7,7 +7,9 @@
 //
 
 #import "Connect4Module.h"
-
+#define Red 1
+#define Blue 2
+#define None 3
 
 
 @implementation Connect4Module
@@ -21,11 +23,11 @@
 }
 
 -(int *) getRow{
-    
+    return 0;
 }
 
 -(int *) getColumn{
-    
+    return 0;
 }
 
 -(bool) isColumnFull: (int) row{
@@ -36,14 +38,19 @@
     return test;
 }
 
--(int) dropCoin:(int) column{
-    
+-(int) dropCoin:(int) column:(int) coin{
+    return 0;
 }
 
 -(BOOL) isWinner{
-    
+    return true;
 }
 
-
-
+-(int)checkColumn:(int) row{
+    for (int i = 0; i < 7; i++)
+    {
+        if(grid[row][i]);
+    }
+    return 0;
+}
 @end
