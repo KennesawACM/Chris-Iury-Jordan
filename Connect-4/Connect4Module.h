@@ -12,6 +12,7 @@
 {
     int *grid[7][6];
 }
+-(void)init;
 -(bool) isColumnFull: (int) full;
 -(int) dropCoin:(int) column;
 -(BOOL) isWinner;

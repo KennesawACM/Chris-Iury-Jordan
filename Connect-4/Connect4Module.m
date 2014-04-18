@@ -14,6 +14,8 @@
 
 @implementation Connect4Module
 
+
+
 -(void) setRow: (int *) row{
     
 }
@@ -38,24 +40,20 @@
     return test;
 }
 
--(int) dropCoin:(int) row:(int) coin{
-    int column = checkColumn(row);
-    grid[row][column]= &coin;
-    return column;
+-(int) dropCoin:(int) coin inColumn:(int) column{
+    int row = checkColumn(column);
+    grid[column][row]= &coin;
+    return row;
 }
 
 -(BOOL) isWinner:(int) column{
     return true;
 }
 
--(int)checkColumn:(int) row{
+-(int)NumColumn:(int) row{
     int num=0;
-    for (int i = 0; i <= 5; i++)
-    {
-        if(grid[row][i] != None)
-        {
-            num += 1;
-        }
+    while (grid[row][num] != None && num<=5) {
+        num++;
     }
     return num;
 }
