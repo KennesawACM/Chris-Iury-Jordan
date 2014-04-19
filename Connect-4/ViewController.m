@@ -25,11 +25,20 @@
     self.redPlayersTurn = true;
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)releaseCoin:(id)sender  {
+    
+    
+    
+}
+
+
 
 - (IBAction)changeTurns:(id)sender {
     

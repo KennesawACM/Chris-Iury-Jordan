@@ -17,88 +17,84 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yri-RL-zlB">
-                                <rect key="frame" x="223" y="70" width="45" height="250"/>
+                                <rect key="frame" x="250" y="70" width="45" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="VWf-0a-Uny"/>
                                     <constraint firstAttribute="width" constant="45" id="y3X-G0-tFu"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" backgroundImage="column">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNw-Ga-p9X">
-                                <rect key="frame" x="178" y="70" width="45" height="250"/>
+                                <rect key="frame" x="205" y="70" width="45" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="6qb-c9-wHZ"/>
                                     <constraint firstAttribute="width" constant="45" id="9He-ZJ-vYU"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" backgroundImage="column">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrA-Eu-Pdk">
-                                <rect key="frame" x="133" y="70" width="45" height="250"/>
+                                <rect key="frame" x="160" y="70" width="45" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="H4g-zx-2E4"/>
                                     <constraint firstAttribute="height" constant="250" id="ITM-Be-Csn"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" backgroundImage="column">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkd-nc-zhw">
-                                <rect key="frame" x="88" y="70" width="45" height="250"/>
+                                <rect key="frame" x="115" y="70" width="45" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="7CT-Sc-fb0"/>
                                     <constraint firstAttribute="width" constant="45" id="iQ4-zQ-Z9W"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" backgroundImage="column">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrN-Y4-j5g">
-                                <rect key="frame" x="43" y="70" width="45" height="250"/>
+                                <rect key="frame" x="70" y="70" width="45" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="7yO-wf-77I"/>
                                     <constraint firstAttribute="height" constant="250" id="OUI-EJ-6J0"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" backgroundImage="column">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EM-KL-7sm">
-                                <rect key="frame" x="-2" y="70" width="45" height="250"/>
+                                <rect key="frame" x="25" y="70" width="45" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="Qds-L8-0CC"/>
                                     <constraint firstAttribute="width" constant="45" id="cfr-hX-j1Q"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" backgroundImage="column">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nly-bX-OMA">
-                                <rect key="frame" x="268" y="70" width="45" height="250"/>
+                                <rect key="frame" x="295" y="70" width="45" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="NNQ-DH-7rq"/>
                                     <constraint firstAttribute="width" constant="45" id="tce-k3-9rK"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" backgroundImage="column">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="dropCoin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yqL-gL-HOj"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_coin" highlightedImage="red_transparent_coin" translatesAutoresizingMaskIntoConstraints="NO" id="hg7-Ii-2zi">
                                 <rect key="frame" x="387" y="109" width="73" height="65"/>
@@ -130,15 +126,34 @@
                                     <action selector="changeTurns:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gEO-c0-DvC"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_column" translatesAutoresizingMaskIntoConstraints="NO" id="eMj-G6-agH">
+                                <rect key="frame" x="5" y="70" width="20" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="FPw-Bf-l7g"/>
+                                    <constraint firstAttribute="height" constant="250" id="cFY-mb-Ycx"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_column" translatesAutoresizingMaskIntoConstraints="NO" id="nfr-b7-Xst">
+                                <rect key="frame" x="340" y="70" width="20" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="PZc-ws-CcJ"/>
+                                    <constraint firstAttribute="width" constant="20" id="x3D-wU-1KW"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nfr-b7-Xst" firstAttribute="centerY" secondItem="Nly-bX-OMA" secondAttribute="centerY" id="1lg-Nd-muR"/>
                             <constraint firstItem="JNw-Ga-p9X" firstAttribute="leading" secondItem="OrA-Eu-Pdk" secondAttribute="trailing" id="96Q-0R-5jo"/>
                             <constraint firstItem="TrN-Y4-j5g" firstAttribute="leading" secondItem="9EM-KL-7sm" secondAttribute="trailing" id="99T-Ib-FJ1"/>
                             <constraint firstItem="Pkd-nc-zhw" firstAttribute="leading" secondItem="TrN-Y4-j5g" secondAttribute="trailing" id="Ael-ky-vyD"/>
+                            <constraint firstItem="eMj-G6-agH" firstAttribute="centerY" secondItem="9EM-KL-7sm" secondAttribute="centerY" id="DB0-gW-CM9"/>
                             <constraint firstItem="OrA-Eu-Pdk" firstAttribute="leading" secondItem="Pkd-nc-zhw" secondAttribute="trailing" id="DTc-Tm-OZn"/>
+                            <constraint firstItem="9EM-KL-7sm" firstAttribute="leading" secondItem="eMj-G6-agH" secondAttribute="trailing" id="DhI-Vs-2Fb"/>
                             <constraint firstAttribute="bottom" secondItem="Iud-Qu-cpT" secondAttribute="bottom" constant="20" id="FTh-K3-T1S"/>
-                            <constraint firstItem="9EM-KL-7sm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="-2" id="IIO-zQ-Ap8"/>
+                            <constraint firstItem="9EM-KL-7sm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="25" id="IIO-zQ-Ap8"/>
                             <constraint firstItem="OrA-Eu-Pdk" firstAttribute="centerY" secondItem="9EM-KL-7sm" secondAttribute="centerY" id="JiF-lw-0b4"/>
                             <constraint firstItem="OrA-Eu-Pdk" firstAttribute="centerY" secondItem="Pkd-nc-zhw" secondAttribute="centerY" id="LkJ-ta-gob"/>
                             <constraint firstItem="yri-RL-zlB" firstAttribute="leading" secondItem="JNw-Ga-p9X" secondAttribute="trailing" id="NqJ-ar-bL8"/>
@@ -148,6 +163,7 @@
                             <constraint firstAttribute="trailing" secondItem="Iud-Qu-cpT" secondAttribute="trailing" constant="20" id="gH1-uW-Pmo"/>
                             <constraint firstItem="OrA-Eu-Pdk" firstAttribute="centerY" secondItem="Nly-bX-OMA" secondAttribute="centerY" id="hCC-ub-vzc"/>
                             <constraint firstItem="OrA-Eu-Pdk" firstAttribute="centerY" secondItem="JNw-Ga-p9X" secondAttribute="centerY" id="iSd-3d-sho"/>
+                            <constraint firstItem="nfr-b7-Xst" firstAttribute="leading" secondItem="Nly-bX-OMA" secondAttribute="trailing" id="oIe-li-2fz"/>
                             <constraint firstItem="hg7-Ii-2zi" firstAttribute="leading" secondItem="5Pp-8m-qip" secondAttribute="leading" id="pjU-75-XgS"/>
                             <constraint firstAttribute="bottom" secondItem="9EM-KL-7sm" secondAttribute="bottom" id="roR-2Z-vTZ"/>
                             <constraint firstItem="5Pp-8m-qip" firstAttribute="top" secondItem="hg7-Ii-2zi" secondAttribute="bottom" constant="17" id="umN-fn-7TM"/>
@@ -172,8 +188,11 @@
     <resources>
         <image name="blue_coin" width="150" height="133"/>
         <image name="blue_transparent_coin" width="150" height="133"/>
+        <image name="column" width="150" height="800"/>
+        <image name="left_column" width="67" height="800"/>
         <image name="red_coin" width="150" height="133"/>
         <image name="red_transparent_coin" width="150" height="133"/>
+        <image name="right_column" width="67" height="800"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
