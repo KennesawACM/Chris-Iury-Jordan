@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *RedPlayerIndicator;
 @property (weak, nonatomic) IBOutlet UIImageView *BluePlayerIndicator;
 @property (weak, nonatomic) IBOutlet UIButton *ChangeTurnButton;
+@property (nonatomic) BOOL redPlayersTurn;
 @end
 
 @implementation ViewController
@@ -21,6 +22,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.redPlayersTurn = true;
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,14 +32,17 @@
 }
 
 - (IBAction)changeTurns:(id)sender {
-    if (self.RedPlayerIndicator.alpha < 1) {
-        self.RedPlayerIndicator.alpha = 1;
-        self.BluePlayerIndicator.alpha = 0.3;
+    
+    if (self.redPlayersTurn == false) {
+        [self.RedPlayerIndicator setImage:[UIImage imageNamed:@"red_coin"]];
+        [self.BluePlayerIndicator setImage:[UIImage imageNamed:@"blue_transparent_coin"]];
+        self.redPlayersTurn = true;
     }
     else
     {
-        self.RedPlayerIndicator.alpha = 0.3;
-        self.BluePlayerIndicator.alpha = 1;
+        [self.RedPlayerIndicator setImage:[UIImage imageNamed:@"red_transparent_coin"]];
+        [self.BluePlayerIndicator setImage:[UIImage imageNamed:@"blue_coin"]];
+        self.redPlayersTurn = false;
     }
 }
 

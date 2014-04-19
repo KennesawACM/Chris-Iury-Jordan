@@ -23,6 +23,8 @@
 
 @implementation Connect4Module
 
+
+
 -(void) setRow: (int *) row{
     
 }
@@ -49,8 +51,10 @@
     return test;
 }
 
--(int) dropCoin:(int) column:(int) coin{
-    return 0;
+-(int) dropCoin:(int) coin inColumn:(int) column{
+    int row = checkColumn(column);
+    grid[column][row]= &coin;
+    return row;
 }
 
 -(BOOL) isWinner:(int)column coinType:(int)coin{
@@ -147,15 +151,11 @@
     return false;
 }
 
--(int)checkColumn:(int) row{
-    int num;
-    for (int i = 0; i < 7; i++)
-    {
-        if(grid[row][i] == None)
-        {
-            
-        }
+-(int)NumColumn:(int) row{
+    int num=0;
+    while (grid[row][num] != None && num<=5) {
+        num++;
     }
-    return 0;
+    return num;
 }
 @end

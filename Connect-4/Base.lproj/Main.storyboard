@@ -100,20 +100,20 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedPlayer" translatesAutoresizingMaskIntoConstraints="NO" id="hg7-Ii-2zi">
-                                <rect key="frame" x="395" y="110" width="65" height="65"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_coin" highlightedImage="red_transparent_coin" translatesAutoresizingMaskIntoConstraints="NO" id="hg7-Ii-2zi">
+                                <rect key="frame" x="387" y="109" width="73" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="C8d-rO-QZM"/>
-                                    <constraint firstAttribute="width" constant="65" id="fBC-l8-9RN"/>
+                                    <constraint firstAttribute="width" constant="73" id="fBC-l8-9RN"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999966" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BluePlayer" translatesAutoresizingMaskIntoConstraints="NO" id="5Pp-8m-qip">
-                                <rect key="frame" x="395" y="191" width="65" height="65"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue_transparent_coin" highlightedImage="blue_coin" translatesAutoresizingMaskIntoConstraints="NO" id="5Pp-8m-qip">
+                                <rect key="frame" x="387" y="191" width="73" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="DSt-As-iwn"/>
-                                    <constraint firstAttribute="width" constant="65" id="rEC-SZ-fq9"/>
+                                    <constraint firstAttribute="width" constant="73" id="rEC-SZ-fq9"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iud-Qu-cpT">
@@ -150,8 +150,8 @@
                             <constraint firstItem="OrA-Eu-Pdk" firstAttribute="centerY" secondItem="JNw-Ga-p9X" secondAttribute="centerY" id="iSd-3d-sho"/>
                             <constraint firstItem="hg7-Ii-2zi" firstAttribute="leading" secondItem="5Pp-8m-qip" secondAttribute="leading" id="pjU-75-XgS"/>
                             <constraint firstAttribute="bottom" secondItem="9EM-KL-7sm" secondAttribute="bottom" id="roR-2Z-vTZ"/>
-                            <constraint firstItem="5Pp-8m-qip" firstAttribute="top" secondItem="hg7-Ii-2zi" secondAttribute="bottom" constant="16" id="umN-fn-7TM"/>
-                            <constraint firstItem="hg7-Ii-2zi" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="110" id="zZw-LY-hKN"/>
+                            <constraint firstItem="5Pp-8m-qip" firstAttribute="top" secondItem="hg7-Ii-2zi" secondAttribute="bottom" constant="17" id="umN-fn-7TM"/>
+                            <constraint firstItem="hg7-Ii-2zi" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="109" id="zZw-LY-hKN"/>
                             <constraint firstItem="Nly-bX-OMA" firstAttribute="leading" secondItem="yri-RL-zlB" secondAttribute="trailing" id="zwq-B1-fT1"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -170,8 +170,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BluePlayer" width="65" height="65"/>
-        <image name="RedPlayer" width="65" height="65"/>
+        <image name="blue_coin" width="150" height="133"/>
+        <image name="blue_transparent_coin" width="150" height="133"/>
+        <image name="red_coin" width="150" height="133"/>
+        <image name="red_transparent_coin" width="150" height="133"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
