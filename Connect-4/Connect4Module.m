@@ -155,8 +155,8 @@
            return [self checkMatch:VERT
                        horizontal:HORIZ
                              count:matches + 1
-                            column:c+VERT
-                               row:r+HORIZ
+                            column:c+HORIZ
+                               row:r+VERT
                               coin:coin];
         
         }
