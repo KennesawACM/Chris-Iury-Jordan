@@ -21,6 +21,14 @@
 #define HORIZONTAL 0
 #define VERTICAL_DOWN 1
 
+#define MIN_LENGTH 0
+#define MIN_HEIGHT 0
+#define MAX_LENGTH 6
+#define MAX_HEIGHT 5
+
+
+#define CONNECT_TOTAL 4
+
 @implementation Connect4Module
 
 
@@ -58,71 +66,86 @@
 }
 
 -(BOOL) isWinner:(int)column coinType:(int)coin{
-    int numberOfMatches = 0;
+    int numberOfMatches = 1;
     
     // Needed to know how many coins are in each column
     int currentCoinPosition = 0;
     
     // only run these if statements when column is 0.
     // no need to check elements to the left that do not exist.
-    if(column == 0)
+    if( [self checkMatch:DIRECTION_RIGHT
+             orientation:DIAGONAL_UP
+                   count:numberOfMatches
+                  column:column
+                     row:currentCoinPosition
+                    coin:coin])
     {
-        if(currentCoinPosition > 3)
-        {
-            
-            if( [self checkMatch:DIRECTION_RIGHT
-                                   orientation:DIAGONAL_UP
-                                         count:numberOfMatches
-                                        column:column
-                                           row:currentCoinPosition
-                               coin:coin])
-            {
-                return true;
-            }
-        }
-        
-        if(currentCoinPosition < 4)
-        {
-            if( [self checkMatch:DIRECTION_RIGHT
-                    orientation:DIAGONAL_DOWN
-                          count:numberOfMatches
-                         column:column
-                            row:currentCoinPosition
-                                coin:coin])
-            {
-                return true;
-            }
-            else if( [self checkMatch:DIRECTION_NEITHER
-                            orientation:VERTICAL_DOWN
-                                  count:numberOfMatches
-                                 column:column
-                                    row:currentCoinPosition
-                                   coin:coin])
-            {
-                return true;
-            }
-        }
-        
-        if( [self checkMatch:DIRECTION_RIGHT
-                    orientation:HORIZONTAL
-                          count:numberOfMatches
-                         column:column
-                            row:currentCoinPosition
-                           coin:coin])
-        {
-            return true;
-        }
-        
+        return true;
     }
-    else if(column == 6)
+
+    if( [self checkMatch:DIRECTION_RIGHT
+             orientation:DIAGONAL_DOWN
+                   count:numberOfMatches
+                  column:column
+                     row:currentCoinPosition
+                    coin:coin])
     {
-        
-    }
-    else
-    {
-        // check diagonal
+        return true;
     }
     
+    if( [self checkMatch:DIRECTION_NEITHER
+                  orientation:VERTICAL_DOWN
+                        count:numberOfMatches
+                       column:column
+                          row:currentCoinPosition
+                         coin:coin])
+    {
+        return true;
+    }
+
+    if( [self checkMatch:DIRECTION_RIGHT
+         orientation:HORIZONTAL
+               count:numberOfMatches
+              column:column
+                 row:currentCoinPosition
+                coin:coin])
+    {
+        return true;
+    }
+    
+    if( [self checkMatch:DIRECTION_LEFT
+             orientation:HORIZONTAL
+                   count:numberOfMatches
+                  column:column
+                     row:currentCoinPosition
+                    coin:coin])
+    {
+        return true;
+    }
+    
+    if( [self checkMatch:DIRECTION_LEFT
+             orientation:DIAGONAL_UP
+                   count:numberOfMatches
+                  column:column
+                     row:currentCoinPosition
+                    coin:coin])
+    {
+        return true;
+    }
+    
+    if( [self checkMatch:DIRECTION_LEFT
+             orientation:DIAGONAL_DOWN
+                   count:numberOfMatches
+                  column:column
+                     row:currentCoinPosition
+                    coin:coin])
+    {
+        return true;
+    }
+    
+    
+
+
     return false;
 }
 
@@ -133,22 +156,30 @@
               row:(int)r
              coin:(int)coin
 {
-    
-    if(grid[c+direction][r+VERT_DIAGONAL] == coin)
-    {
-        if(matches == 3)
+    @try{
+        if(grid[c+direction][r+VERT_DIAGONAL] == coin)
         {
-            return true;
+            if(matches == CONNECT_TOTAL)
+            {
+                return true;
+            }
+            else if(matches > CONNECT_TOTAL)
+                return false;
+            
+           return [self checkMatch:direction
+                       orientation:VERT_DIAGONAL
+                             count:matches + 1
+                            column:c+direction
+                               row:r+VERT_DIAGONAL
+                              coin:coin];
+        
         }
-       return [self checkMatch:direction
-                   orientation:VERT_DIAGONAL
-                         count:matches + 1
-                        column:c+direction
-                           row:r+VERT_DIAGONAL
-                          coin:coin];
-    
+    }@catch(NSException *e)
+    {
+        return false;
     }
     return false;
+    
 }
 
 -(int)NumColumn:(int) row{
