@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Connect4Module.h"
 
 @interface ViewController : UIViewController
+{
+    Connect4Module *connect4;
+}
 
 @end

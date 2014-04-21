@@ -8,14 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+
+#define NUM_COLUMNS 7
+#define NUM_ROWS 6
+
 @interface Connect4Module : NSObject
 {
-    int grid[7][6];
+    int grid[NUM_COLUMNS][NUM_ROWS];
 }
 -(id)init;
 -(bool) isColumnFull: (int) full;
 -(int)numCoins:(int) column;
 -(int) dropCoin:(int) coin inColumn:(int) column;
 -(BOOL) isWinner:(int)column coinType:(int)coin;
+-(int)loc:(int) column;
 
 @end
+

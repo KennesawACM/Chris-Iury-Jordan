@@ -11,9 +11,6 @@
 #define Blue 2
 #define NONE 0
 
-#define NUM_COLUMNS 7
-#define NUM_ROWS 6
-
 #define HORIZ_RIGHT 1
 #define HORIZ_LEFT -1
 #define HORIZ_NEITHER 0
@@ -68,26 +65,29 @@
 
 //return the number of coins in a column
 -(int)numCoins:(int) column{
-    int num=0;
-    while (grid[column][num] != NONE && num<NUM_ROWS) {
+    int num = 0;
+    while ((grid[column][num] != Blue && grid[column][num] != Red) && num <  NUM_ROWS) {
         num++;
     }
-    return num;
+    return NUM_ROWS - num;
 }
 
 -(int) dropCoin:(int) coin inColumn:(int) column{
-    int row = [self numCoins:column];
+    int row = NUM_ROWS - [self numCoins:column] - 1;
     grid[column][row]= coin;
     return row;
 }
 
-
+-(int)loc:(int)column
+{
+    return NUM_ROWS - [self numCoins:column];
+}
 
 -(BOOL) isWinner:(int)column coinType:(int)coin{
     int numberOfMatches = 1;
     
     // Needed to know how many coins are in each column
-    int currentCoinPosition = 0;
+    int currentCoinPosition = NUM_ROWS - [self numCoins:column] ;
     
     
     if( [self checkMatch:VERT_UP
@@ -170,15 +170,16 @@
              coin:(int)coin
 {
     @try{
-        if(grid[c+HORIZ][r+VERT] == coin)
+        int tempCoin = grid[c+HORIZ][r+VERT];
+        if(matches == CONNECT_TOTAL)
         {
-            if(matches == CONNECT_TOTAL)
-            {
-                return true;
-            }
-            else if(matches > CONNECT_TOTAL)
-                return false;
-            
+            return true;
+        }
+        else if(matches > CONNECT_TOTAL)
+            return false;
+        
+        if(tempCoin == coin)
+        {
            return [self checkMatch:VERT
                        horizontal:HORIZ
                              count:matches + 1

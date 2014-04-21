@@ -22,6 +22,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    connect4 = [Connect4Module new];
+
+//    [connect4 dropCoin:1 inColumn:0];
+//    NSLog(@"%d", [connect4 loc:0]);
+//    [connect4 dropCoin:1 inColumn:1];
+//    NSLog(@"%d", [connect4 loc:1]);
+//    [connect4 dropCoin:2 inColumn:2];
+//    NSLog(@"%d", [connect4 loc:2]);
+//    [connect4 dropCoin:1 inColumn:3];
+//    NSLog(@"%d", [connect4 loc:3]);
+//    [connect4 dropCoin:1 inColumn:4];
+//    NSLog(@"%d", [connect4 loc:4]);
+
+//    [connect4 dropCoin:1 inColumn:0];
+//    NSLog(@"%d", [connect4 loc:0]);
+//    [connect4 dropCoin:1 inColumn:0];
+//    NSLog(@"%d", [connect4 loc:0]);
+//    [connect4 dropCoin:1 inColumn:0];
+//    NSLog(@"%d", [connect4 loc:0]);
+//    [connect4 dropCoin:1 inColumn:0];
+//    NSLog(@"%d", [connect4 loc:0]);
+//    [connect4 dropCoin:1 inColumn:0];
+//    NSLog(@"%d", [connect4 loc:0]);
+    
+//    NSLog(@"->%@", ([connect4 isWinner:4 coinType:1] == true)? @"TRUE":@"FALSE");
+    
 	// Do any additional setup after loading the view, typically from a nib.
     self.redPlayersTurn = true;
 }
@@ -62,6 +88,7 @@
     //if (![self.game isColumnFull])
     {
         int columnIndex = [self.Columns indexOfObject:sender];
+        
       //  [self.game dropCoin:currentCoin inColumn:columnIndex];
         //if (self.game isWinner:columnIndex coinType:currentCoin) {
             if (self.redPlayersTurn) {
