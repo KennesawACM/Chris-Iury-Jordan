@@ -82,7 +82,8 @@
 }
 
 -(BOOL) isWinner:(int)column coinType:(int)coin{
-    int numberOfMatches = 1;
+    int *numberOfMatches = malloc(sizeof(int));
+    *numberOfMatches = 1;
     
     // Needed to know how many coins are in each column
     int currentCoinPosition = NUM_ROWS - [self numCoins:column] ;
@@ -97,7 +98,8 @@
     {
         return true;
     }
-
+    *numberOfMatches = 1;
+    
     if( [self checkMatch:VERT_DOWN
               horizontal:HORIZ_RIGHT
                    count:numberOfMatches
@@ -107,6 +109,7 @@
     {
         return true;
     }
+    *numberOfMatches = 1;
     
     if( [self checkMatch:VERT_NEITHER
               horizontal:HORIZ_RIGHT
@@ -117,7 +120,8 @@
     {
         return true;
     }
-
+    *numberOfMatches = 1;
+    
     if( [self checkMatch:VERT_UP
               horizontal:HORIZ_LEFT
                    count:numberOfMatches
@@ -127,6 +131,7 @@
     {
         return true;
     }
+    *numberOfMatches = 1;
     
     if( [self checkMatch:VERT_DOWN
               horizontal:HORIZ_LEFT
@@ -137,6 +142,7 @@
     {
         return true;
     }
+    *numberOfMatches = 1;
     
     if( [self checkMatch:VERT_NEITHER
               horizontal:HORIZ_LEFT
@@ -147,6 +153,7 @@
     {
         return true;
     }
+    *numberOfMatches = 1;
     
     if( [self checkMatch:VERT_DOWN
               horizontal:HORIZ_NEITHER
@@ -157,35 +164,61 @@
     {
         return true;
     }
+    *numberOfMatches = 1;
+    
     return false;
 }
 
 -(BOOL)checkMatch:(int)VERT
        horizontal:(int)HORIZ
-            count:(int)matches
+            count:(int*)matches
            column:(int)c
               row:(int)r
              coin:(int)coin
 {
     @try{
-        int tempCoin = grid[c+HORIZ][r+VERT];
-        if(matches == CONNECT_TOTAL)
+        int directionOne = grid[c+HORIZ][r+VERT];
+        int directionTwo = 0;
+        if(*matches == 1)
+        {
+            directionTwo = grid[c+(HORIZ*-1)][r+(VERT*-1)];
+            if(directionTwo == coin)
+            {
+                *matches += 1;
+                if( [self checkMatch:VERT * -1
+                          horizontal:HORIZ * -1
+                               count:matches
+                              column:c+(HORIZ*-1)
+                                 row:r+(VERT*-1)
+                                coin:coin])
+                {
+                    return TRUE;
+                }
+            }
+
+        }
+        if(*matches == CONNECT_TOTAL)
         {
             return true;
         }
-        else if(matches > CONNECT_TOTAL)
+        else if(*matches > CONNECT_TOTAL)
             return false;
         
-        if(tempCoin == coin)
+        if(directionOne == coin)
         {
-           return [self checkMatch:VERT
+            *matches += 1;
+           if( [self checkMatch:VERT
                        horizontal:HORIZ
-                             count:matches + 1
+                             count:matches
                             column:c+HORIZ
                                row:r+VERT
-                              coin:coin];
+                              coin:coin])
+           {
+               return TRUE;
+           }
         
         }
+        
     }@catch(NSException *e)
     {
         return false;
