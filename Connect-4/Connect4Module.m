@@ -55,7 +55,7 @@
 // it would be best to not have a *int[][] just saying.
 -(bool) isColumnFull: (int) column{
     BOOL test = FALSE;
-    if(grid[row][0] != 0){
+    if(grid[column][0] != NONE){
         test =  true;
     }
     return test;
