@@ -14,21 +14,13 @@
 #define COLUMN_LENGTH 6
 #define ROW_LENGTH 7
 
-#define DIRECTION_RIGHT 1
-#define DIRECTION_LEFT -1
+#define HORIZ_RIGHT 1
+#define HORIZ_LEFT -1
+#define HORIZ_NEITHER 0
 
-#define DIRECTION_NEITHER 0
-#define DIAGONAL_UP -1
-#define DIAGONAL_DOWN 1
-
-#define HORIZONTAL 0
-#define VERTICAL_DOWN 1
-
-#define MIN_LENGTH 0
-#define MIN_HEIGHT 0
-#define MAX_LENGTH 6
-#define MAX_HEIGHT 5
-
+#define VERT_NEITHER 0
+#define VERT_UP -1
+#define VERT_DOWN 1
 
 #define CONNECT_TOTAL 4
 
@@ -66,7 +58,6 @@
 }
 
 // it would be best to not have a *int[][] just saying.
-
 -(bool) isColumnFull: (int) row{
     BOOL test = FALSE;
     if(grid[row][5] != 0){
@@ -98,10 +89,9 @@
     // Needed to know how many coins are in each column
     int currentCoinPosition = 0;
     
-    // only run these if statements when column is 0.
-    // no need to check elements to the left that do not exist.
-    if( [self checkMatch:DIRECTION_RIGHT
-             orientation:DIAGONAL_UP
+    
+    if( [self checkMatch:VERT_UP
+              horizontal:HORIZ_RIGHT
                    count:numberOfMatches
                   column:column
                      row:currentCoinPosition
@@ -110,8 +100,8 @@
         return true;
     }
 
-    if( [self checkMatch:DIRECTION_RIGHT
-             orientation:DIAGONAL_DOWN
+    if( [self checkMatch:VERT_DOWN
+              horizontal:HORIZ_RIGHT
                    count:numberOfMatches
                   column:column
                      row:currentCoinPosition
@@ -120,28 +110,18 @@
         return true;
     }
     
-    if( [self checkMatch:DIRECTION_NEITHER
-                  orientation:VERTICAL_DOWN
-                        count:numberOfMatches
-                       column:column
-                          row:currentCoinPosition
-                         coin:coin])
+    if( [self checkMatch:VERT_NEITHER
+              horizontal:HORIZ_RIGHT
+                   count:numberOfMatches
+                  column:column
+                     row:currentCoinPosition
+                    coin:coin])
     {
         return true;
     }
 
-    if( [self checkMatch:DIRECTION_RIGHT
-         orientation:HORIZONTAL
-               count:numberOfMatches
-              column:column
-                 row:currentCoinPosition
-                coin:coin])
-    {
-        return true;
-    }
-    
-    if( [self checkMatch:DIRECTION_LEFT
-             orientation:HORIZONTAL
+    if( [self checkMatch:VERT_UP
+              horizontal:HORIZ_LEFT
                    count:numberOfMatches
                   column:column
                      row:currentCoinPosition
@@ -150,8 +130,8 @@
         return true;
     }
     
-    if( [self checkMatch:DIRECTION_LEFT
-             orientation:DIAGONAL_UP
+    if( [self checkMatch:VERT_DOWN
+              horizontal:HORIZ_LEFT
                    count:numberOfMatches
                   column:column
                      row:currentCoinPosition
@@ -160,8 +140,8 @@
         return true;
     }
     
-    if( [self checkMatch:DIRECTION_LEFT
-             orientation:DIAGONAL_DOWN
+    if( [self checkMatch:VERT_NEITHER
+              horizontal:HORIZ_LEFT
                    count:numberOfMatches
                   column:column
                      row:currentCoinPosition
@@ -170,21 +150,27 @@
         return true;
     }
     
-    
-
-
+    if( [self checkMatch:VERT_DOWN
+              horizontal:HORIZ_NEITHER
+                   count:numberOfMatches
+                  column:column
+                     row:currentCoinPosition
+                    coin:coin])
+    {
+        return true;
+    }
     return false;
 }
 
--(BOOL)checkMatch:(int)direction
-      orientation:(int)VERT_DIAGONAL
+-(BOOL)checkMatch:(int)VERT
+       horizontal:(int)HORIZ
             count:(int)matches
            column:(int)c
               row:(int)r
              coin:(int)coin
 {
     @try{
-        if(grid[c+direction][r+VERT_DIAGONAL] == coin)
+        if(grid[c+HORIZ][r+VERT] == coin)
         {
             if(matches == CONNECT_TOTAL)
             {
@@ -193,11 +179,11 @@
             else if(matches > CONNECT_TOTAL)
                 return false;
             
-           return [self checkMatch:direction
-                       orientation:VERT_DIAGONAL
+           return [self checkMatch:VERT
+                       horizontal:HORIZ
                              count:matches + 1
-                            column:c+direction
-                               row:r+VERT_DIAGONAL
+                            column:c+HORIZ
+                               row:r+VERT
                               coin:coin];
         
         }
@@ -206,7 +192,6 @@
         return false;
     }
     return false;
-    
 }
 
 
