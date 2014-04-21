@@ -9,7 +9,10 @@
 #import "Connect4Module.h"
 #define Red 1
 #define Blue 2
-#define None 0
+#define NONE 0
+
+#define COLUMN_LENGTH 6
+#define ROW_LENGTH 7
 
 #define DIRECTION_RIGHT 1
 #define DIRECTION_LEFT -1
@@ -49,6 +52,19 @@
     return 0;
 }
 
+-(id) init
+{
+    if( self = [super init] )
+        for (int i =0; i <ROW_LENGTH; i++)
+        {
+            for (int j=0; j < COLUMN_LENGTH; j++) {
+                grid[i][j] =NONE;
+            }
+        }
+    return self;
+    
+}
+
 // it would be best to not have a *int[][] just saying.
 
 -(bool) isColumnFull: (int) row{
@@ -59,11 +75,22 @@
     return test;
 }
 
+//return the number
+-(int)numCoins:(int) column{
+    int num=0;
+    while (grid[column][num] != NONE && num<=5) {
+        num++;
+    }
+    return num;
+}
+
 -(int) dropCoin:(int) coin inColumn:(int) column{
-    int row = checkColumn(column);
-    grid[column][row]= &coin;
+    int row = [self numCoins:column];
+    grid[column][row]= coin;
     return row;
 }
+
+
 
 -(BOOL) isWinner:(int)column coinType:(int)coin{
     int numberOfMatches = 1;
@@ -182,11 +209,5 @@
     
 }
 
--(int)NumColumn:(int) row{
-    int num=0;
-    while (grid[row][num] != None && num<=5) {
-        num++;
-    }
-    return num;
-}
+
 @end

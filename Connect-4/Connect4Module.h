@@ -10,13 +10,12 @@
 
 @interface Connect4Module : NSObject
 {
-    int *grid[7][6];
+    int grid[7][6];
 }
--(void)init;
+-(id)init;
 -(bool) isColumnFull: (int) full;
--(int) dropCoin:(int) column;
--(BOOL) isWinner;
-
-
+-(int)numCoins:(int) column;
+-(int) dropCoin:(int) coin inColumn:(int) column;
+-(BOOL) isWinner:(int)column coinType:(int)coin;
 
 @end
