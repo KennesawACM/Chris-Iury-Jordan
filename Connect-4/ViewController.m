@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *ChangeTurnButton;
 @property (nonatomic) BOOL redPlayersTurn;
 @property (weak, nonatomic) IBOutlet UILabel *winnerLabel;
+@property (strong,nonatomic) UIImageView *coin;
+@property (strong, nonatomic) NSMutableArray *activeCoins;
 @end
 
 @implementation ViewController
@@ -23,6 +25,7 @@
 {
     [super viewDidLoad];
     connect4 = [Connect4Module new];
+    self.activeCoins = [[NSMutableArray alloc] init];
 
 //    [connect4 dropCoin:1 inColumn:0];
 //    NSLog(@"%d", [connect4 loc:0]);
@@ -64,18 +67,19 @@
     
     CGPoint buttonPosition = columnButton.frame.origin;
     
-    UIImageView *coin = [[UIImageView alloc] initWithFrame:CGRectMake(buttonPosition.x, buttonPosition.y - 50, 45, 40)];
+    self.coin = [[UIImageView alloc] initWithFrame:CGRectMake(buttonPosition.x, buttonPosition.y - 50, 45, 41.6f)];
     
     if (self.redPlayersTurn) {
-        coin.image = [UIImage imageNamed:@"red_coin"];
+        self.coin.image = [UIImage imageNamed:@"red_coin"];
     }
     else
     {
-        coin.image = [UIImage imageNamed:@"blue_coin"];
+        self.coin.image = [UIImage imageNamed:@"blue_coin"];
     }
     
-    coin.contentMode = UIViewContentModeScaleAspectFit;
-    [self.view addSubview:coin];
+    self.coin.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:self.coin];
+    [self.view sendSubviewToBack:self.coin];
 }
 
 - (IBAction)releaseCoin:(id)sender  {
@@ -85,12 +89,18 @@
         currentCoin = 1;
     }
     
-    //if (![self.game isColumnFull])
+    int columnIndex = [self.Columns indexOfObject:sender];
+    
+    if (![connect4 isColumnFull:columnIndex])
     {
-        int columnIndex = [self.Columns indexOfObject:sender];
-        
-      //  [self.game dropCoin:currentCoin inColumn:columnIndex];
-        //if (self.game isWinner:columnIndex coinType:currentCoin) {
+        [connect4 dropCoin:currentCoin inColumn:columnIndex];
+        [UIView animateWithDuration:1.0f animations:^{
+            int coinNum = [connect4 numCoins:columnIndex];
+            int newYPos = self.view.bounds.size.height - (coinNum * (self.coin.bounds.size.height));
+            [self.coin setFrame:CGRectMake(self.coin.frame.origin.x, newYPos, self.coin.frame.size.width, self.coin.frame.size.height)];
+            [self.activeCoins addObject:self.coin];
+        }];
+        if ([connect4 isWinner:columnIndex coinType:currentCoin]) {
             if (self.redPlayersTurn) {
                 [self.winnerLabel setText:@"Red Wins"];
             }
@@ -98,14 +108,20 @@
             {
                 [self.winnerLabel setText:@"Blue Wins"];
             }
-      //  }
-        
-        
+        }
         [self changeTurns];
     }
 }
 
-
+- (IBAction)startNewGame:(id)sender {
+    UIImageView *coin;
+    for (coin in self.activeCoins) {
+        [coin removeFromSuperview];
+    }
+    [self.activeCoins removeAllObjects];
+    [self.winnerLabel setText:@"New Game"];
+    connect4 = [connect4 init];
+}
 
 - (void)changeTurns{
     
