@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define RED 1
+#define BLUE 2
 
 #define NUM_COLUMNS 7
 #define NUM_ROWS 6
