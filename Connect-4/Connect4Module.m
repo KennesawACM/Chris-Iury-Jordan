@@ -11,8 +11,8 @@
 #define Blue 2
 #define NONE 0
 
-#define COLUMN_LENGTH 6
-#define ROW_LENGTH 7
+#define NUM_COLUMNS 7
+#define NUM_ROWS 6
 
 #define HORIZ_RIGHT 1
 #define HORIZ_LEFT -1
@@ -47,9 +47,9 @@
 -(id) init
 {
     if( self = [super init] )
-        for (int i =0; i <ROW_LENGTH; i++)
+        for (int i =0; i <NUM_COLUMNS; i++)
         {
-            for (int j=0; j < COLUMN_LENGTH; j++) {
+            for (int j=0; j < NUM_ROWS; j++) {
                 grid[i][j] =NONE;
             }
         }
@@ -66,10 +66,10 @@
     return test;
 }
 
-//return the number
+//return the number of coins in a column
 -(int)numCoins:(int) column{
     int num=0;
-    while (grid[column][num] != NONE && num<=5) {
+    while (grid[column][num] != NONE && num<NUM_ROWS) {
         num++;
     }
     return num;
