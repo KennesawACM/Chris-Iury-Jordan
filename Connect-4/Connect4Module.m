@@ -7,8 +7,6 @@
 //
 
 #import "Connect4Module.h"
-#define Red 1
-#define Blue 2
 #define NONE 0
 
 #define HORIZ_RIGHT 1
@@ -55,9 +53,9 @@
 }
 
 // it would be best to not have a *int[][] just saying.
--(bool) isColumnFull: (int) row{
+-(bool) isColumnFull: (int) column{
     BOOL test = FALSE;
-    if(grid[row][5] != 0){
+    if(grid[column][0] != NONE){
         test =  true;
     }
     return test;
@@ -66,7 +64,7 @@
 //return the number of coins in a column
 -(int)numCoins:(int) column{
     int num = 0;
-    while ((grid[column][num] != Blue && grid[column][num] != Red) && num <  NUM_ROWS) {
+    while ((grid[column][num] != BLUE && grid[column][num] != RED) && num <  NUM_ROWS) {
         num++;
     }
     return NUM_ROWS - num;
