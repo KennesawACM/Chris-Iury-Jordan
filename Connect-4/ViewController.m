@@ -13,10 +13,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *RedPlayerIndicator;
 @property (weak, nonatomic) IBOutlet UIImageView *BluePlayerIndicator;
 @property (nonatomic) BOOL redPlayersTurn;
-@property (weak, nonatomic) IBOutlet UILabel *winnerLabel;
 @property (strong,nonatomic) UIImageView *coin;
 @property (strong, nonatomic) NSMutableArray *activeCoins;
-@property (strong, nonatomic) UIView *winnerScreen;
+@property (strong, nonatomic) UIImageView *winnerBanner;
+@property (weak, nonatomic) IBOutlet UIButton *gameButton;
 @end
 
 @implementation ViewController
@@ -26,6 +26,8 @@
     [super viewDidLoad];
     connect4 = [Connect4Module new];
     self.activeCoins = [[NSMutableArray alloc] init];
+    self.gameButton.alpha = 0;
+    self.gameButton.enabled = false;
     
 
 //    [connect4 dropCoin:1 inColumn:0];
@@ -95,6 +97,8 @@
     
     if (![connect4 isColumnFull:columnIndex])
     {
+        self.gameButton.alpha = 1;
+        self.gameButton.enabled = true;
         [connect4 dropCoin:currentCoin inColumn:columnIndex];
         [UIView animateWithDuration:0.8f
                               delay:0
@@ -122,60 +126,26 @@
 }
 
 -(void)declareWinner{
-    self.winnerScreen = [[UIView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width/2 - 100,self.view.center.y , 200, 0)];
-    
-    UILabel *winner = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 160, 20)];
-    winner.textColor = [UIColor whiteColor];
-    
-    
-    UIView *winnerBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 0 , 200, 0)];
-    winnerBackground.alpha = 0.5;
-    
+    NSString *winner;
     if (self.redPlayersTurn) {
-        [winner setText:@"Red Wins"];
-        winnerBackground.backgroundColor = [UIColor redColor];
+        winner = @"Red";
     }
     else
     {
-        [winner setText:@"Blue Wins"];
-        winnerBackground.backgroundColor = [UIColor blueColor];
+        winner = @"Blue";
     }
-    [self.winnerScreen addSubview:winnerBackground];
+    self.winnerBanner = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_Winner",winner]]];
+    self.winnerBanner.frame = CGRectMake(self.view.frame.size.width + 50, 0, 100, 0);
+    [self.view addSubview:self.winnerBanner];
     
-    
-    
-    UIButton *newGameButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [newGameButton setTitle:@"New Game" forState:UIControlStateNormal];
-    newGameButton.frame = CGRectMake(20, 60, 100, 20);
-    newGameButton.backgroundColor = [UIColor whiteColor];
-    [newGameButton addTarget:self
-                action:@selector(startNewGame)
-      forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.winnerScreen];
-    
-    //Animates winner screen to ease in from the middle of the screen
-    [UIView animateWithDuration:0.8
-                          delay:0
-                        options:UIViewAnimationOptionCurveEaseInOut
+    [UIView animateWithDuration:0.8f
                      animations:^{
-                         [self.winnerScreen setFrame:CGRectMake(self.view.bounds.size.width/2 - 100, self.view.bounds.size.height/2 - 50, 200, 100)];
-                         [winnerBackground setFrame:CGRectMake(self.winnerScreen.bounds.origin.x, self.winnerScreen.bounds.origin.y, self.winnerScreen.bounds.size.width, self.winnerScreen.bounds.size.height)];
-                     }
-                     completion:^(BOOL finished){
-                         [self.winnerScreen addSubview:winner];
-                         [self.winnerScreen addSubview:newGameButton];
-                     }
-     ];
-    if (self.redPlayersTurn) {
-        [winner setText:@"Red Wins"];
-    }
-    else
-    {
-        [winner setText:@"Blue Wins"];
-    }
+                         self.winnerBanner.frame = CGRectMake(self.winnerBanner.frame.origin.x, self.winnerBanner.frame.origin.y, 100, 275);
+                     }];
+    
 }
 
-- (void)startNewGame{
+- (IBAction)newGame:(id)sender {
     for (UIImageView *coin in self.activeCoins) {
         
         //Animation to drop coins and remove them from view
@@ -191,8 +161,15 @@
                          }];
     }
     [self.activeCoins removeAllObjects];
-    [self.winnerLabel setText:@"New Game"];
-    [self.winnerScreen removeFromSuperview];
+    [UIView animateWithDuration:0.8f
+                     animations:^{
+                         self.winnerBanner.frame = CGRectMake(self.winnerBanner.frame.origin.x, self.winnerBanner.frame.origin.y, 100, 0);
+                     }
+                     completion:^(BOOL finished){
+                         [self.winnerBanner removeFromSuperview];
+                     }];
+    self.gameButton.alpha = 0;
+    self.gameButton.enabled = false;
     
     connect4 = [connect4 init];
     
@@ -205,6 +182,7 @@
         [self.BluePlayerIndicator setImage:[UIImage imageNamed:@"blue_transparent_coin"]];
         self.redPlayersTurn = true;
     }
+    
 }
 
 - (void)changeTurns{

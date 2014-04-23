@@ -153,6 +153,16 @@
                                     <constraint firstAttribute="width" constant="20" id="x3D-wU-1KW"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Z9-oy-JwJ">
+                                <rect key="frame" x="371" y="283" width="89" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="NewGame">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="newGame:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lWZ-ad-qPF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -185,6 +195,7 @@
                     <connections>
                         <outlet property="BluePlayerIndicator" destination="5Pp-8m-qip" id="w92-q2-jqy"/>
                         <outlet property="RedPlayerIndicator" destination="hg7-Ii-2zi" id="j9L-7Q-KjU"/>
+                        <outlet property="gameButton" destination="6Z9-oy-JwJ" id="0lB-hr-Oer"/>
                         <outletCollection property="Columns" destination="9EM-KL-7sm" id="htN-pP-s23"/>
                         <outletCollection property="Columns" destination="TrN-Y4-j5g" id="fnK-16-OcU"/>
                         <outletCollection property="Columns" destination="Pkd-nc-zhw" id="YdQ-zX-KMF"/>
@@ -200,6 +211,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="NewGame" width="359" height="80"/>
         <image name="blue_coin" width="150" height="133"/>
         <image name="blue_transparent_coin" width="150" height="133"/>
         <image name="column" width="150" height="800"/>
