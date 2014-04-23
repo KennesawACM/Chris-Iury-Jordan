@@ -27,6 +27,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="dragExit:" destination="vXZ-lx-hvc" eventType="touchDragExit" id="Ipd-4h-yzM"/>
                                     <action selector="releaseCoin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MhT-0f-siA"/>
                                     <action selector="selectColumn:" destination="vXZ-lx-hvc" eventType="touchDown" id="x3Q-BH-hgw"/>
                                 </connections>
@@ -42,6 +43,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="dragExit:" destination="vXZ-lx-hvc" eventType="touchDragExit" id="V3D-H3-jVW"/>
                                     <action selector="releaseCoin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2dv-8w-Q0N"/>
                                     <action selector="selectColumn:" destination="vXZ-lx-hvc" eventType="touchDown" id="w7C-sK-QmV"/>
                                 </connections>
@@ -57,6 +59,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="dragExit:" destination="vXZ-lx-hvc" eventType="touchDragExit" id="Df7-cY-Tvz"/>
                                     <action selector="releaseCoin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hyx-v3-OAc"/>
                                     <action selector="selectColumn:" destination="vXZ-lx-hvc" eventType="touchDown" id="V8e-IF-e1V"/>
                                 </connections>
@@ -72,6 +75,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="dragExit:" destination="vXZ-lx-hvc" eventType="touchDragExit" id="UyC-2J-PBc"/>
                                     <action selector="releaseCoin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Obe-ZN-Wwc"/>
                                     <action selector="selectColumn:" destination="vXZ-lx-hvc" eventType="touchDown" id="VII-Ln-PUZ"/>
                                 </connections>
@@ -87,6 +91,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="dragExit:" destination="vXZ-lx-hvc" eventType="touchDragExit" id="rHy-lD-Kjo"/>
                                     <action selector="releaseCoin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UvS-5q-pCU"/>
                                     <action selector="selectColumn:" destination="vXZ-lx-hvc" eventType="touchDown" id="6GF-hr-2pS"/>
                                 </connections>
@@ -102,6 +107,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="dragExit:" destination="vXZ-lx-hvc" eventType="touchDragExit" id="OQs-vH-ZVh"/>
                                     <action selector="releaseCoin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6TC-u9-IbB"/>
                                     <action selector="selectColumn:" destination="vXZ-lx-hvc" eventType="touchDown" id="W7F-jU-LoP"/>
                                 </connections>
@@ -117,6 +123,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="dragExit:" destination="vXZ-lx-hvc" eventType="touchDragExit" id="kmD-MT-NbQ"/>
                                     <action selector="releaseCoin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="enn-Ml-AZs"/>
                                     <action selector="selectColumn:" destination="vXZ-lx-hvc" eventType="touchDown" id="vHU-FL-wZQ"/>
                                 </connections>

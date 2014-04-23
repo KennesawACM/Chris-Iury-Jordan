@@ -184,6 +184,9 @@
     }
     
 }
+- (IBAction)dragExit:(id)sender {
+    [self.coin removeFromSuperview];
+}
 
 - (void)changeTurns{
     
