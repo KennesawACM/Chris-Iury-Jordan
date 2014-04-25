@@ -135,7 +135,7 @@
         winner = @"Blue";
     }
     self.winnerBanner = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_Winner",winner]]];
-    self.winnerBanner.frame = CGRectMake(self.view.bounds.size.width - 115, 0, 100, 0);
+    self.winnerBanner.frame = CGRectMake(self.view.bounds.size.width - 105, 0, 100, 0);
     [self.view addSubview:self.winnerBanner];
     
     [UIView animateWithDuration:0.8f
